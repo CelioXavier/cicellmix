@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="https://th.bing.com/th/id/OIP.Vvyq78WlsnTYm5WwpH4eBQHaHa?w=215&h=216&c=7&r=0&o=5&pid=1.7" type="image/x-icon">
+    <title>CiCell MIX</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(180deg, #ff0000, #ffffff);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        /* Cabeçalho menor com fundo degradê */
+        header {
+            background: linear-gradient(90deg, #ff0000, #ff0000);
+            padding: 30px 20px;
+            text-align: center;
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 28px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); /* Sombra no texto */
+        }
+        
+        .mix-text {
+            color: yellow; /* Cor do MIX em amarelo */
+        }
+        
+        
+
+        header p {
+            font-size: 16px;
+            margin-top: 5px;
+            color: #ffe0b3;
+        }
+
+        /* Menu de navegação */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: transparent;
+            padding: 15px 0;
+            margin-top: 120px;
+        }
+
+        nav a {
+            color: #ffffff;
+            padding: 8px 25px;
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: 2px solid #ffffff;
+            border-radius: 20px;
+            transition: all 0.4s ease;
+        }
+
+        nav a:hover {
+            color: rgb(248, 203, 2);
+            transform: scale(1.05);
+        }
+
+        /* Seção de promoções */
+        .promo-section {
+            padding: 40px 20px;
+            text-align: center;
+            display: block;
+        }
+
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 5px #fff, 0 0 10px #ff0000, 0 0 15px #ff0000, 0 0 20px #ff0000, 0 0 25px #ff0000, 0 0 30px #ff0000;
+            }
+            50% {
+                text-shadow: 0 0 20px #fff, 0 0 30px #ff0000, 0 0 40px #ff0000, 0 0 50px #ff0000, 0 0 60px #ff0000, 0 0 70px #ff0000;
+            }
+            100% {
+                text-shadow: 0 0 5px #fff, 0 0 10px #ff0000, 0 0 15px #ff0000, 0 0 20px #ff0000, 0 0 25px #ff0000, 0 0 30px #ff0000;
+            }
+        }
+        
+        .promo-section h2 {
+            font-size: 36px;
+            color: #ffffff;
+            font-weight: bold;
+            animation: glow 2s infinite ease-in-out;
+        }
+        
+        
+
+        .promo-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .promo-item {
+            background-color: white;
+            margin: 0 10px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .promo-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .promo-item img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .promo-item h3 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .promo-item p {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        .promo-item .price {
+            font-size: 20px;
+            color: #ff0000;
+            font-weight: bold;
+        }
+
+        .promo-item button {
+            padding: 10px 20px;
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 10px;
+            transition: background 0.3s ease;
+        }
+
+        .promo-item button:hover {
+            background-color: #ff0000;
+        }
+
+        /* Seção sobre (oculta por padrão) */
+        .about-section {
+            padding: 60px;
+            background-color: #fff;
+            text-align: center;
+            margin: 0 auto;
+            max-width: 800px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        .about-section h2 {
+            color: #ff0000;
+            font-size: 28px;
+        }
+
+        .about-section p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .glow-on-hover {
+            width: 160px;
+            height: 50px;
+            border: none;
+            outline: none;
+            color: #fff;
+            background: #111;
+            cursor: pointer;
+            position: relative;
+            z-index: 0;
+            border-radius: 10px;
+        }
+
+        .glow-on-hover:before {
+            content: '';
+            background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            background-size: 400%;
+            z-index: -1;
+            filter: blur(5px);
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            animation: glowing 20s linear infinite;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            border-radius: 10px;
+        }
+
+        .glow-on-hover:hover:before {
+            opacity: 1;
+        }
+
+        @keyframes glowing {
+            0% {
+                background-position: 0 0;
+            }
+
+            50% {
+                background-position: 400% 0;
+            }
+
+            100% {
+                background-position: 0 0;
+            }
+        }
+
+        
+
+        /* Rodapé */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #ff0000;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+    </style>
+
+    <script>
+        function mostrarSobre() {
+            document.querySelector('.about-section').style.display = 'block';
+            document.querySelector('.promo-section').style.display = 'none';
+        }
+
+        function mostrarPromocoes() {
+            document.querySelector('.about-section').style.display = 'none';
+            document.querySelector('.promo-section').style.display = 'block';
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>CiCell <span class="mix-text">MIX</span></h1>
+        <p>Manutenção e Acessórios de Celular</p>
+    </header>
+</br></br>
+    <nav>
+        <a href="#promocoes" onclick="mostrarPromocoes()">Home</a>
+        <a href="#sobre" onclick="mostrarSobre()">Sobre</a>
+    </nav>
+
+    <!-- Seção de Promoções -->
+    <div class="promo-section">
+        <h2>Promoções</h2>
+
+        <div class="promo-grid">
+            <div class="promo-item">
+                <img src="Pelicula.jpeg" alt="Películas">
+                <h3>Películas</h3>
+                <p>Multi modelos</p>
+                <p class="price">R$ 25,00</p>
+                <a href="https://wa.me/5511953511527?text=Olá, tenho interesse em películas. Gostaria de saber mais detalhes!" target="_blank">
+                    <button class="glow-on-hover">
+                        Contato
+                    </button>
+                </a>                
+            </div>
+
+            <div class="promo-item">
+                <img src="Phones.jpeg" alt="Phones">
+                <h3>Phones</h3>
+                <p>Diversos modelos a partir de</p>
+                <p class="price">R$ 50,00</p>
+                <a href="https://wa.me/5511953511527?text=Olá, tenho interesse em fones de ouvido. Gostaria de saber mais detalhes!" target="_blank">
+                    <button class="glow-on-hover"><strong>Contato</strong></button>
+                </a>
+            </div>
+
+            <div class="promo-item">
+                <img src="Cabos.jpeg" alt="Cabos">
+                <h3>Cabos diversos</h3>
+                <p>Celular / PC / TABLET a partir de</p>
+                <p class="price">R$ 10,00</p>
+                <a href="https://wa.me/5511953511527?text=Olá, tenho interesse em cabos. Gostaria de saber mais detalhes!" target="_blank">
+                    <button class="glow-on-hover"><strong>Contato</strong></button>
+                </a>
+            </div>
+
+            <div class="promo-item">
+                <img src="Capinhas.jpeg" alt="Capinhas">
+                <h3>Capinhas para Celular</h3>
+                <p>Diversos modelos a partir de</p>
+                <p class="price">R$ 30,00</p>
+                <a href="https://wa.me/5511953511527?text=Olá, tenho interesse em capinhas de celular. Gostaria de saber mais detalhes!" target="_blank">
+                    <button class="glow-on-hover"><strong>Contato</strong></button>
+                </a>
+            </div>
+        </div>
+
+        <div class="promo-grid">
+            <div class="promo-item">
+                <img src="CaixinhasSom.jpeg" alt="Caixas de Som">
+                <h3>Caixinhas de Som</h3>
+                <p>Multi modelos a partir de</p>
+                <p class="price">R$ 35,00</p>
+                <a href="https://wa.me/5511953511527?text=Olá, tenho interesse em caixas de som. Gostaria de saber mais detalhes!" target="_blank">
+                    <button class="glow-on-hover"><strong>Contato</strong></button>
+                </a>
+            </div>
+
+            <div class="promo-item">
+                <img src="Carregadores.jpeg" alt="Carregadores">
+                <h3>Carregadores</h3>
+                <p>Diversos modelos a partir de</p>
+                <p class="price">R$ 25,00</p>
+                <a href="https://wa.me/5511953511527?text=Olá, tenho interesse em carregadores. Gostaria de saber mais detalhes!" target="_blank">
+                    <button class="glow-on-hover"><strong>Contato</strong></button>
+                </a>
+            </div>
+
+            <div class="promo-item">
+                <img src="Controles.jpeg" alt="Controles">
+                <h3>Controles</h3>
+                <p>Diversos modelos</p>
+                <p class="price">R$ 25,00</p>
+                <a href="https://wa.me/5511953511527?text=Olá, tenho interesse em controles de TV. Gostaria de saber mais detalhes!" target="_blank">
+                    <button class="glow-on-hover"><strong>Contato</strong></button>
+                </a>
+            </div>
+
+            <div class="promo-item">
+                <img src="Suporte.jpeg" alt="Suporte">
+                <h3>Suportes para carro</h3>
+                <p>Diversos modelos a partir de</p>
+                <p class="price">R$ 20,00</p>
+                <a href="https://wa.me/5511953511527?text=Olá, tenho interesse em suportes de carro. Gostaria de saber mais detalhes!" target="_blank">
+                    <button class="glow-on-hover"><strong>Contato</strong></button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção Sobre (Centralizada e inicialmente oculta) -->
+    <section id="sobre" class="about-section">
+        <h2>Sobre Nós</h2>
+        <p>A <strong>CiCell Mix</strong> é uma loja especializada em manutenção de celulares e na venda de acessórios de alta qualidade. Oferecemos soluções rápidas e eficientes para diversos tipos de problemas técnicos, garantindo o melhor desempenho para seu dispositivo. Nosso portfólio inclui capas, películas, carregadores e fones de ouvido, todos com garantia de qualidade. Com uma equipe de técnicos experientes e atendimento personalizado, buscamos proporcionar uma experiência diferenciada, com foco na satisfação do cliente e no melhor custo-benefício.</p>
+        </br></br></br>
+        <a href="https://wa.me/5511953511527" target="_blank">
+        <h2><strong style="color: green;">WhatsApp 11 964638076</strong></h2>
+        </a>
+        </br></br></br>
+        <p><strong>Avenida Carlos Liveiro Nº 1273 <br/> Vila Livero - São Paulo Campo - SP <br/> CEP: 04186-100</strong></p>
+        </section>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 CiCell MIX - Todos os direitos reservados</p>
+        <a href="#">Termos de Serviço</a> | <a href="#">Política de Privacidade</a>
+    </footer>
+</body>
+
+</html>
