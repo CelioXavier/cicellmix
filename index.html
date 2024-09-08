@@ -21,28 +21,27 @@
             box-sizing: border-box; /* Garante que margens e paddings sejam considerados dentro da largura total */
         }
 
-        /* Ajustes para promoções em telas menores */
+        /* Configuração para telas pequenas (mobile) */
         @media (max-width: 768px) {
             .promo-grid {
-                grid-template-columns: 1fr; /* Uma coluna */
+                grid-template-columns: repeat(2, 1fr); /* Duas colunas */
                 gap: 10px;
             }
 
             .promo-item {
-                width: 100%; /* Garantir que os itens ocupem a largura total */
-                margin: 0 auto; /* Centraliza o conteúdo */
+                width: 100%;
             }
 
             .promo-item img {
-                width: 80px; /* Ajuste no tamanho da imagem */
+                width: 80px;
             }
         }
 
-        /* Ajustes para telas menores que 480px */
+        /* Configuração para telas muito pequenas */
         @media (max-width: 480px) {
             .promo-grid {
                 grid-template-columns: 1fr; /* Uma coluna */
-                gap: 5px;
+                gap: 10px;
             }
 
             .promo-item {
