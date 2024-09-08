@@ -8,38 +8,6 @@
     <link rel="icon" href="https://th.bing.com/th/id/OIP.Vvyq78WlsnTYm5WwpH4eBQHaHa?w=215&h=216&c=7&r=0&o=5&pid=1.7" type="image/x-icon">
     <title>CiCell MIX</title>
     <style>
-    @media (max-width: 768px) {
-    header h1 {
-        font-size: 20px; /* Ajusta o tamanho do título no mobile */
-    }
-    
-    nav {
-        flex-direction: column; /* Alinha os links na vertical */
-        margin-top: 150px;
-    }
-
-    nav a {
-        padding: 12px 20px;
-        margin: 5px 0;
-        font-size: 18px;
-        width: 100%;
-        text-align: center; /* Centraliza os links no mobile */
-    }
-
-    .promo-grid {
-        grid-template-columns: 1fr; /* Deixa uma coluna para cada item no grid */
-    }
-
-    .promo-item {
-        margin: 10px 0;
-    }
-
-    .glow-on-hover {
-        width: 100%; /* Faz o botão ocupar a largura total */
-        font-size: 18px;
-    }
-}
-
         
         body {
             margin: 0;
@@ -93,17 +61,16 @@
             margin-top: 120px;
         }
 
-        nav a {
-            color: #ffffff;
-            padding: 8px 25px;
-            margin: 0 10px;
-            text-decoration: none;
-            font-weight: bold;
-            text-transform: uppercase;
-            border: 2px solid #ffffff;
-            border-radius: 20px;
-            transition: all 0.4s ease;
+        @media (max-width: 768px) {
+            nav a {
+                font-size: 16px; /* Diminui o tamanho da fonte */
+                padding: 10px 15px; /* Ajusta o padding para mobile */
+                margin: 5px 0; /* Reduz o espaço entre os links */
+                width: 100%; /* Faz o botão ocupar toda a largura no mobile */
+                text-align: center; /* Centraliza o texto */
+            }
         }
+
 
         nav a:hover {
             color: rgb(248, 203, 2);
