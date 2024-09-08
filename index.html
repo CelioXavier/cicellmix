@@ -22,36 +22,23 @@
         }
 
         /* Configuração para telas pequenas (mobile) */
+        /* Estilos para dispositivos móveis */
         @media (max-width: 768px) {
             .promo-grid {
-                grid-template-columns: repeat(2, 1fr); /* Duas colunas */
-                gap: 10px;
+                display: flex;
+                overflow-x: auto; /* Permite rolagem horizontal */
+                gap: 20px;
+                padding: 20px;
+                scroll-snap-type: x mandatory;
             }
 
             .promo-item {
-                width: 100%;
-            }
-
-            .promo-item img {
-                width: 80px;
+                flex: 0 0 auto; /* Itens na horizontal */
+                width: 200px;
+                scroll-snap-align: start; /* Snap dos itens */
             }
         }
 
-        /* Configuração para telas muito pequenas */
-        @media (max-width: 480px) {
-            .promo-grid {
-                grid-template-columns: 1fr; /* Uma coluna */
-                gap: 10px;
-            }
-
-            .promo-item {
-                width: 100%;
-            }
-
-            .promo-item img {
-                width: 70px;
-            }
-        }
 
         body {
             margin: 0;
