@@ -8,7 +8,6 @@
     <link rel="icon" href="https://th.bing.com/th/id/OIP.Vvyq78WlsnTYm5WwpH4eBQHaHa?w=215&h=216&c=7&r=0&o=5&pid=1.7" type="image/x-icon">
     <title>CiCell MIX</title>
     <style>
-        
         body {
             margin: 0;
             padding: 0;
@@ -37,14 +36,12 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             margin: 0;
-            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); /* Sombra no texto */
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
         }
-        
+
         .mix-text {
-            color: yellow; /* Cor do MIX em amarelo */
+            color: yellow;
         }
-        
-        
 
         header p {
             font-size: 16px;
@@ -61,20 +58,33 @@
             margin-top: 120px;
         }
 
-        @media (max-width: 768px) {
-            nav a {
-                font-size: 16px; /* Diminui o tamanho da fonte */
-                padding: 10px 15px; /* Ajusta o padding para mobile */
-                margin: 5px 0; /* Reduz o espaço entre os links */
-                width: 100%; /* Faz o botão ocupar toda a largura no mobile */
-                text-align: center; /* Centraliza o texto */
-            }
+        nav a {
+            color: #ffffff;
+            padding: 8px 25px;
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: 2px solid #ffffff;
+            border-radius: 20px;
+            transition: all 0.4s ease;
         }
-
 
         nav a:hover {
             color: rgb(248, 203, 2);
             transform: scale(1.05);
+        }
+
+        /* Tornar o botão Home responsivo */
+        @media (max-width: 768px) {
+            nav a {
+                font-size: 16px;
+                padding: 10px 15px;
+                margin: 5px 0;
+                width: 100%;
+                text-align: center;
+                display: block;
+            }
         }
 
         /* Seção de promoções */
@@ -83,7 +93,6 @@
             text-align: center;
             display: block;
         }
-
 
         @keyframes glow {
             0% {
@@ -96,15 +105,13 @@
                 text-shadow: 0 0 5px #fff, 0 0 10px #ff0000, 0 0 15px #ff0000, 0 0 20px #ff0000, 0 0 25px #ff0000, 0 0 30px #ff0000;
             }
         }
-        
+
         .promo-section h2 {
             font-size: 36px;
             color: #ffffff;
             font-weight: bold;
             animation: glow 2s infinite ease-in-out;
         }
-        
-        
 
         .promo-grid {
             display: grid;
@@ -191,56 +198,6 @@
             line-height: 1.8;
         }
 
-        .glow-on-hover {
-            width: 160px;
-            height: 50px;
-            border: none;
-            outline: none;
-            color: #fff;
-            background: #111;
-            cursor: pointer;
-            position: relative;
-            z-index: 0;
-            border-radius: 10px;
-        }
-
-        .glow-on-hover:before {
-            content: '';
-            background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            background-size: 400%;
-            z-index: -1;
-            filter: blur(5px);
-            width: calc(100% + 4px);
-            height: calc(100% + 4px);
-            animation: glowing 20s linear infinite;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-            border-radius: 10px;
-        }
-
-        .glow-on-hover:hover:before {
-            opacity: 1;
-        }
-
-        @keyframes glowing {
-            0% {
-                background-position: 0 0;
-            }
-
-            50% {
-                background-position: 400% 0;
-            }
-
-            100% {
-                background-position: 0 0;
-            }
-        }
-
-        
-
         /* Rodapé */
         footer {
             background-color: #333;
@@ -257,7 +214,6 @@
         footer a:hover {
             text-decoration: underline;
         }
-
     </style>
 
     <script>
