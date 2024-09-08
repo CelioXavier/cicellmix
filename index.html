@@ -8,16 +8,25 @@
     <link rel="icon" href="https://th.bing.com/th/id/OIP.Vvyq78WlsnTYm5WwpH4eBQHaHa?w=215&h=216&c=7&r=0&o=5&pid=1.7" type="image/x-icon">
     <title>CiCell MIX</title>
     <style>
-        body {
+        /* Ajustes globais */
+        body, html {
             margin: 0;
             padding: 0;
+            width: 100%;
+            overflow-x: hidden; /* Impede rolagem horizontal */
+        }
+
+        * {
+            box-sizing: border-box; /* Garante que margens e paddings sejam considerados dentro da largura total */
+        }
+
+        body {
             font-family: 'Roboto', sans-serif;
             background: linear-gradient(180deg, #ff0000, #ffffff);
             background-repeat: no-repeat;
             background-attachment: fixed;
         }
 
-        /* Cabeçalho menor com fundo degradê */
         header {
             background: linear-gradient(90deg, #ff0000, #ff0000);
             padding: 30px 20px;
@@ -49,7 +58,6 @@
             color: #ffe0b3;
         }
 
-        /* Menu de navegação */
         nav {
             display: flex;
             justify-content: center;
@@ -75,90 +83,6 @@
             transform: scale(1.05);
         }
 
-        /* Tornar o botão Home responsivo */
-        @media (max-width: 768px) {
-            nav a {
-                font-size: 16px;
-                padding: 10px 15px;
-                margin: 5px 0;
-                width: 100%;
-                text-align: center;
-                display: block;
-            }
-        }
-
-        /* Ajustes para telas pequenas */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 24px;
-                letter-spacing: 1px;
-            }
-
-            header p {
-                font-size: 14px;
-            }
-
-            header {
-                padding: 15px 10px;
-            }
-        }
-
-        /* Ajustes para telas muito pequenas, como celulares */
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 20px;
-            }
-
-            header p {
-                font-size: 12px;
-            }
-        }
-
-        /* Ajustes para telas menores */
-        @media (max-width: 768px) {
-            .promo-grid {
-                grid-template-columns: 1fr; /* Uma coluna */
-                gap: 10px; /* Espaçamento reduzido */
-            }
-
-            .promo-item {
-                margin: 0 auto; /* Centralizar no mobile */
-                width: 90%; /* Largura de cada item */
-            }
-
-            .promo-item img {
-                width: 80px; /* Ajuste no tamanho das imagens */
-            }
-
-            .promo-section h2 {
-                font-size: 24px; /* Ajustar tamanho da fonte */
-            }
-        }
-
-        /* Ajustes para telas muito pequenas, como celulares */
-        @media (max-width: 480px) {
-            .promo-grid {
-                grid-template-columns: 1fr; /* Apenas uma coluna */
-                gap: 5px;
-            }
-
-            .promo-item {
-                width: 100%;
-            }
-
-            .promo-item img {
-                width: 70px;
-            }
-
-            .promo-section h2 {
-                font-size: 20px;
-            }
-        }
-
-
-
-
-        /* Seção de promoções */
         .promo-section {
             padding: 40px 20px;
             text-align: center;
@@ -246,30 +170,53 @@
             background-color: #ff0000;
         }
 
-        /* Seção sobre (oculta por padrão) */
-        .about-section {
-            padding: 60px;
-            background-color: #fff;
-            text-align: center;
-            margin: 0 auto;
-            max-width: 800px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            display: none;
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 24px;
+            }
+
+            header p {
+                font-size: 14px;
+            }
+
+            .promo-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .promo-item img {
+                width: 80px;
+            }
+
+            .promo-item {
+                margin: 0 auto;
+            }
         }
 
-        .about-section h2 {
-            color: #ff0000;
-            font-size: 28px;
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 20px;
+            }
+
+            header p {
+                font-size: 12px;
+            }
+
+            .promo-grid {
+                grid-template-columns: 1fr;
+                gap: 5px;
+            }
+
+            .promo-item img {
+                width: 70px;
+            }
+
+            .promo-item {
+                margin: 0 auto;
+            }
         }
 
-        .about-section p {
-            font-size: 16px;
-            color: #555;
-            line-height: 1.8;
-        }
-
-        /* Rodapé */
         footer {
             background-color: #333;
             color: white;
@@ -286,18 +233,6 @@
             text-decoration: underline;
         }
     </style>
-
-    <script>
-        function mostrarSobre() {
-            document.querySelector('.about-section').style.display = 'block';
-            document.querySelector('.promo-section').style.display = 'none';
-        }
-
-        function mostrarPromocoes() {
-            document.querySelector('.about-section').style.display = 'none';
-            document.querySelector('.promo-section').style.display = 'block';
-        }
-    </script>
 </head>
 
 <body>
