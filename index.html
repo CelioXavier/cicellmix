@@ -8,6 +8,7 @@
     <link rel="icon" href="https://th.bing.com/th/id/OIP.Vvyq78WlsnTYm5WwpH4eBQHaHa?w=215&h=216&c=7&r=0&o=5&pid=1.7" type="image/x-icon">
     <title>CiCell MIX</title>
     <style>
+
         /* Ajustes globais */
         body, html {
             margin: 0;
@@ -20,13 +21,49 @@
             box-sizing: border-box; /* Garante que margens e paddings sejam considerados dentro da largura total */
         }
 
+        /* Ajustes para promoções em telas menores */
+        @media (max-width: 768px) {
+            .promo-grid {
+                grid-template-columns: 1fr; /* Uma coluna */
+                gap: 10px;
+            }
+
+            .promo-item {
+                width: 100%; /* Garantir que os itens ocupem a largura total */
+                margin: 0 auto; /* Centraliza o conteúdo */
+            }
+
+            .promo-item img {
+                width: 80px; /* Ajuste no tamanho da imagem */
+            }
+        }
+
+        /* Ajustes para telas menores que 480px */
+        @media (max-width: 480px) {
+            .promo-grid {
+                grid-template-columns: 1fr; /* Uma coluna */
+                gap: 5px;
+            }
+
+            .promo-item {
+                width: 100%;
+            }
+
+            .promo-item img {
+                width: 70px;
+            }
+        }
+
         body {
+            margin: 0;
+            padding: 0;
             font-family: 'Roboto', sans-serif;
             background: linear-gradient(180deg, #ff0000, #ffffff);
             background-repeat: no-repeat;
             background-attachment: fixed;
         }
 
+        /* Cabeçalho menor com fundo degradê */
         header {
             background: linear-gradient(90deg, #ff0000, #ff0000);
             padding: 30px 20px;
@@ -58,6 +95,7 @@
             color: #ffe0b3;
         }
 
+        /* Menu de navegação */
         nav {
             display: flex;
             justify-content: center;
@@ -83,6 +121,90 @@
             transform: scale(1.05);
         }
 
+        /* Tornar o botão Home responsivo */
+        @media (max-width: 768px) {
+            nav a {
+                font-size: 16px;
+                padding: 10px 15px;
+                margin: 5px 0;
+                width: 100%;
+                text-align: center;
+                display: block;
+            }
+        }
+
+        /* Ajustes para telas pequenas */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 24px;
+                letter-spacing: 1px;
+            }
+
+            header p {
+                font-size: 14px;
+            }
+
+            header {
+                padding: 15px 10px;
+            }
+        }
+
+        /* Ajustes para telas muito pequenas, como celulares */
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 20px;
+            }
+
+            header p {
+                font-size: 12px;
+            }
+        }
+
+        /* Ajustes para telas menores */
+        @media (max-width: 768px) {
+            .promo-grid {
+                grid-template-columns: 1fr; /* Uma coluna */
+                gap: 10px; /* Espaçamento reduzido */
+            }
+
+            .promo-item {
+                margin: 0 auto; /* Centralizar no mobile */
+                width: 90%; /* Largura de cada item */
+            }
+
+            .promo-item img {
+                width: 80px; /* Ajuste no tamanho das imagens */
+            }
+
+            .promo-section h2 {
+                font-size: 24px; /* Ajustar tamanho da fonte */
+            }
+        }
+
+        /* Ajustes para telas muito pequenas, como celulares */
+        @media (max-width: 480px) {
+            .promo-grid {
+                grid-template-columns: 1fr; /* Apenas uma coluna */
+                gap: 5px;
+            }
+
+            .promo-item {
+                width: 100%;
+            }
+
+            .promo-item img {
+                width: 70px;
+            }
+
+            .promo-section h2 {
+                font-size: 20px;
+            }
+        }
+
+
+
+
+        /* Seção de promoções */
         .promo-section {
             padding: 40px 20px;
             text-align: center;
@@ -170,53 +292,30 @@
             background-color: #ff0000;
         }
 
-        /* Responsividade */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 24px;
-            }
-
-            header p {
-                font-size: 14px;
-            }
-
-            .promo-grid {
-                grid-template-columns: 1fr;
-                gap: 10px;
-            }
-
-            .promo-item img {
-                width: 80px;
-            }
-
-            .promo-item {
-                margin: 0 auto;
-            }
+        /* Seção sobre (oculta por padrão) */
+        .about-section {
+            padding: 60px;
+            background-color: #fff;
+            text-align: center;
+            margin: 0 auto;
+            max-width: 800px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            display: none;
         }
 
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 20px;
-            }
-
-            header p {
-                font-size: 12px;
-            }
-
-            .promo-grid {
-                grid-template-columns: 1fr;
-                gap: 5px;
-            }
-
-            .promo-item img {
-                width: 70px;
-            }
-
-            .promo-item {
-                margin: 0 auto;
-            }
+        .about-section h2 {
+            color: #ff0000;
+            font-size: 28px;
         }
 
+        .about-section p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* Rodapé */
         footer {
             background-color: #333;
             color: white;
@@ -233,6 +332,18 @@
             text-decoration: underline;
         }
     </style>
+
+    <script>
+        function mostrarSobre() {
+            document.querySelector('.about-section').style.display = 'block';
+            document.querySelector('.promo-section').style.display = 'none';
+        }
+
+        function mostrarPromocoes() {
+            document.querySelector('.about-section').style.display = 'none';
+            document.querySelector('.promo-section').style.display = 'block';
+        }
+    </script>
 </head>
 
 <body>
@@ -240,12 +351,13 @@
         <h1>CiCell <span class="mix-text">MIX</span></h1>
         <p>Manutenção e Acessórios de Celular</p>
     </header>
-
+</br></br>
     <nav>
         <a href="#promocoes" onclick="mostrarPromocoes()">Home</a>
         <a href="#sobre" onclick="mostrarSobre()">Sobre</a>
     </nav>
 
+    <!-- Seção de Promoções -->
     <div class="promo-section">
         <h2>Promoções</h2>
 
@@ -261,15 +373,95 @@
                     </button>
                 </a>
             </div>
-            <!-- Adicione os outros itens de promoção aqui -->
+
+            <div class="promo-item">
+                <img src="Phones.jpeg" alt="Phones">
+                <h3>Phones</h3>
+                <p>Diversos modelos a partir de</p>
+                <p class="price">R$ 50,00</p>
+                <a href="https://wa.me/5511953511527?text=Olá, tenho interesse em fones de ouvido. Gostaria de saber mais detalhes!" target="_blank">
+                    <button class="glow-on-hover"><strong>Contato</strong></button>
+                </a>
+            </div>
+
+            <div class="promo-item">
+                <img src="Cabos.jpeg" alt="Cabos">
+                <h3>Cabos diversos</h3>
+                <p>Celular / PC / TABLET a partir de</p>
+                <p class="price">R$ 10,00</p>
+                <a href="https://wa.me/5511953511527?text=Olá, tenho interesse em cabos. Gostaria de saber mais detalhes!" target="_blank">
+                    <button class="glow-on-hover"><strong>Contato</strong></button>
+                </a>
+            </div>
+
+            <div class="promo-item">
+                <img src="Capinhas.jpeg" alt="Capinhas">
+                <h3>Capinhas para Celular</h3>
+                <p>Diversos modelos a partir de</p>
+                <p class="price">R$ 30,00</p>
+                <a href="https://wa.me/5511953511527?text=Olá, tenho interesse em capinhas de celular. Gostaria de saber mais detalhes!" target="_blank">
+                    <button class="glow-on-hover"><strong>Contato</strong></button>
+                </a>
+            </div>
+        </div>
+
+        <div class="promo-grid">
+            <div class="promo-item">
+                <img src="CaixinhasSom.jpeg" alt="Caixas de Som">
+                <h3>Caixinhas de Som</h3>
+                <p>Multi modelos a partir de</p>
+                <p class="price">R$ 35,00</p>
+                <a href="https://wa.me/5511953511527?text=Olá, tenho interesse em caixas de som. Gostaria de saber mais detalhes!" target="_blank">
+                    <button class="glow-on-hover"><strong>Contato</strong></button>
+                </a>
+            </div>
+
+            <div class="promo-item">
+                <img src="Carregadores.jpeg" alt="Carregadores">
+                <h3>Carregadores</h3>
+                <p>Diversos modelos a partir de</p>
+                <p class="price">R$ 25,00</p>
+                <a href="https://wa.me/5511953511527?text=Olá, tenho interesse em carregadores. Gostaria de saber mais detalhes!" target="_blank">
+                    <button class="glow-on-hover"><strong>Contato</strong></button>
+                </a>
+            </div>
+
+            <div class="promo-item">
+                <img src="Controles.jpeg" alt="Controles">
+                <h3>Controles</h3>
+                <p>Diversos modelos</p>
+                <p class="price">R$ 25,00</p>
+                <a href="https://wa.me/5511953511527?text=Olá, tenho interesse em controles de TV. Gostaria de saber mais detalhes!" target="_blank">
+                    <button class="glow-on-hover"><strong>Contato</strong></button>
+                </a>
+            </div>
+
+            <div class="promo-item">
+                <img src="Suporte.jpeg" alt="Suporte">
+                <h3>Suportes para carro</h3>
+                <p>Diversos modelos a partir de</p>
+                <p class="price">R$ 20,00</p>
+                <a href="https://wa.me/5511953511527?text=Olá, tenho interesse em suportes de carro. Gostaria de saber mais detalhes!" target="_blank">
+                    <button class="glow-on-hover"><strong>Contato</strong></button>
+                </a>
+            </div>
         </div>
     </div>
 
+    <!-- Seção Sobre (Centralizada e inicialmente oculta) -->
     <section id="sobre" class="about-section">
         <h2>Sobre Nós</h2>
-        <p>A <strong>CiCell Mix</strong> é uma loja especializada em manutenção de celulares e na venda de acessórios de alta qualidade. Oferecemos soluções rápidas e eficientes para diversos tipos de problemas técnicos, garantindo o melhor desempenho para seu dispositivo.</p>
+        <p>A <strong>CiCell Mix</strong> é uma loja especializada em manutenção de celulares e na venda de acessórios de alta qualidade. Oferecemos soluções rápidas e eficientes para diversos tipos de problemas técnicos, garantindo o melhor desempenho para seu dispositivo. Nosso portfólio inclui capas, películas, carregadores e fones de ouvido, todos com garantia de qualidade. Com uma equipe de técnicos experientes e atendimento personalizado, buscamos proporcionar uma experiência diferenciada, com foco na satisfação do cliente e no melhor custo-benefício.</p>
+        </br></br></br>
+        <a href="https://wa.me/5511953511527" target="_blank">
+        <h2><strong style="color: green;">WhatsApp 11 964638076</strong></h2>
+        </a>
+        </br></br></br>
+        <p><strong>Avenida Carlos Liveiro Nº 1273 <br/> Vila Livero - São Paulo Campo - SP <br/> CEP: 04186-100</strong></p>
+        </section>
     </section>
 
+    <!-- Rodapé -->
     <footer>
         <p>&copy; 2024 CiCell MIX - Todos os direitos reservados</p>
         <a href="#">Termos de Serviço</a> | <a href="#">Política de Privacidade</a>
