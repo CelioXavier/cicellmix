@@ -8,7 +8,38 @@
     <link rel="icon" href="https://th.bing.com/th/id/OIP.Vvyq78WlsnTYm5WwpH4eBQHaHa?w=215&h=216&c=7&r=0&o=5&pid=1.7" type="image/x-icon">
     <title>CiCell MIX</title>
     <style>
-        @media (max-width: 768px) {
+    @media (max-width: 768px) {
+    header h1 {
+        font-size: 20px; /* Ajusta o tamanho do título no mobile */
+    }
+    
+    nav {
+        flex-direction: column; /* Alinha os links na vertical */
+        margin-top: 150px;
+    }
+
+    nav a {
+        padding: 12px 20px;
+        margin: 5px 0;
+        font-size: 18px;
+        width: 100%;
+        text-align: center; /* Centraliza os links no mobile */
+    }
+
+    .promo-grid {
+        grid-template-columns: 1fr; /* Deixa uma coluna para cada item no grid */
+    }
+
+    .promo-item {
+        margin: 10px 0;
+    }
+
+    .glow-on-hover {
+        width: 100%; /* Faz o botão ocupar a largura total */
+        font-size: 18px;
+    }
+}
+
         
         body {
             margin: 0;
@@ -259,7 +290,7 @@
         footer a:hover {
             text-decoration: underline;
         }
-    }
+
     </style>
 
     <script>
